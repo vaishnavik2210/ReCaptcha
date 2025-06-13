@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Verification - Aadhaar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='uidai.css') }}">
+</head>
+<body class="bg-gradient-to-b from-blue-900 to-blue-500 min-h-screen flex items-center justify-center p-4">
+    <div class="card bg-white/95 shadow-xl w-full max-w-md">
+        <div class="card-header text-center border-b pb-4">
+            <h2 class="text-2xl font-bold text-blue-900">Human Verification</h2>
+        </div>
+        <div class="card-content pt-6">
+            <div class="flex flex-col items-center space-y-8">
+                <div class="text-center">
+                    <h3 class="text-lg font-medium mb-3">Target Shape:</h3>
+                    <div class="border-2 border-blue-900 p-4 inline-block rounded-lg" id="target-container">
+                        <!-- Target shape will be inserted here by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="flex justify-center gap-6 w-full" id="options-container">
+                    <!-- Shape options will be inserted here by JavaScript -->
+                </div>
+                
+                <div id="drop-area" class="border-2 border-dashed border-gray-400 rounded-lg w-40 h-40 flex items-center justify-center">
+                    <span class="text-gray-500 font-medium">Drop Here</span>
+                </div>
+                
+                <div id="verification-result" class="hidden"></div>
+                
+                <button id="verify-btn" class="btn-primary w-full" disabled>Verify</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='verification.js') }}"></script>
+</body>
+</html>

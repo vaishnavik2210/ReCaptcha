@@ -1,0 +1,15 @@
+# Ignore Python virtual environment
+venv/
+
+# Ignore model files
+*.pkl
+*.pyd
+*.dll
+
+# Bytecode and cache
+__pycache__/
+*.pyc
+
+# Other
+.DS_Store
+.env

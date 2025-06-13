@@ -1,0 +1,7 @@
+venv/
+models/
+*.pkl
+*.pyd
+*.dll
+__pycache__/
+*.log

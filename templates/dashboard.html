@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - myAadhaar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='uidai.css') }}">
+</head>
+<body>
+    <div class="flex flex-col min-h-screen">
+        <!-- Header -->
+        <header class="bg-white py-2 px-4 flex items-center justify-between border-b">
+            <div class="flex items-center gap-3">
+                <img src="{{ url_for('static', filename='images/india-embelem.svg') }}" alt="Government of India Emblem" class="w-10 h-10 object-contain">
+                <h1 class="text-blue-600 text-xl font-semibold hidden md:block">
+                    Unique Identification Authority of India
+                </h1>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-1 text-gray-700">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                    </svg>
+                </div>
+                <div class="flex items-center gap-1 text-gray-700">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                    <span class="font-medium">John Doe</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="flex flex-1">
+            <!-- Sidebar -->
+            <aside class="w-64 bg-blue-900 text-white hidden md:block">
+                <div class="p-4 flex items-center gap-2 border-b border-blue-800">
+                    <div class="grid grid-cols-2 gap-0.5">
+                        <div class="w-2 h-2 bg-white"></div>
+                        <div class="w-2 h-2 bg-white"></div>
+                        <div class="w-2 h-2 bg-white"></div>
+                        <div class="w-2 h-2 bg-white"></div>
+                    </div>
+                    <span class="text-xl font-medium">myAadhaar</span>
+                </div>
+                <nav class="p-4">
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="flex items-center gap-3 p-2 rounded-md bg-blue-800 text-white">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                                </svg>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center gap-3 p-2 rounded-md hover:bg-blue-800 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                <span>Update Aadhaar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center gap-3 p-2 rounded-md hover:bg-blue-800 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                                </svg>
+                                <span>Order Aadhaar PVC</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center gap-3 p-2 rounded-md hover:bg-blue-800 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center gap-3 p-2 rounded-md hover:bg-blue-800 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Help & Support</span>
+                            </a>
+                        </li>
+                        <li class="pt-4 mt-4 border-t border-blue-800">
+                            <a href="{{ url_for('home') }}" class="flex items-center gap-3 p-2 rounded-md hover:bg-blue-800 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                                </svg>
+                                <span>Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Dashboard Content -->
+            <main class="flex-1 bg-gray-50 p-6">
+                <div class="max-w-6xl mx-auto">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-800">Dashboard</h2>
+                    
+                    <div class="tabs mb-6">
+                        <!-- Changed tab buttons to white text on hover for better visibility -->
+                        <button class="tab-btn active text-white" data-tab="overview">Overview</button>
+                        <button class="tab-btn text-white" data-tab="services">Services</button>
+                        <button class="tab-btn text-white" data-tab="documents">Documents</button>
+                    </div>
+                    
+                    <div id="overview" class="tab-content active">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                            <div class="card">
+                                <div class="card-header pb-2">
+                                    <h3 class="text-lg font-semibold">Aadhaar Number</h3>
+                                    <p class="text-sm text-gray-500">Your 12-digit unique identifier</p>
+                                </div>
+                                <div class="card-content">
+                                    <p class="text-2xl font-bold">XXXX XXXX 1234</p>
+                                    <p class="text-sm text-gray-500 mt-2">Masked for security</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-header pb-2">
+                                    <h3 class="text-lg font-semibold">Last Updated</h3>
+                                    <p class="text-sm text-gray-500">Your Aadhaar details</p>
+                                </div>
+                                <div class="card-content">
+                                    <p class="text-xl font-medium">15 Jan 2025</p>
+                                    <p class="text-sm text-gray-500 mt-2">Address update</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-header pb-2">
+                                    <h3 class="text-lg font-semibold">Authentication</h3>
+                                    <p class="text-sm text-gray-500">Recent activity</p>
+                                </div>
+                                <div class="card-content">
+                                    <p class="text-xl font-medium">5 authentications</p>
+                                    <p class="text-sm text-gray-500 mt-2">In the last 30 days</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="text-lg font-semibold">Recent Activities</h3>
+                                <p class="text-sm text-gray-500">Your recent Aadhaar-related activities</p>
+                            </div>
+                            <div class="card-content">
+                                <div class="space-y-4">
+                                    <div class="flex items-start justify-between pb-3 border-b">
+                                        <div>
+                                            <h4 class="font-medium">Address Update</h4>
+                                            <p class="text-sm text-gray-500">Your address update request was processed</p>
+                                        </div>
+                                        <span class="text-sm text-gray-500">15 Jan 2025</span>
+                                    </div>
+                                    <div class="flex items-start justify-between pb-3 border-b">
+                                        <div>
+                                            <h4 class="font-medium">Aadhaar Authentication</h4>
+                                            <p class="text-sm text-gray-500">Authentication for Bank KYC</p>
+                                        </div>
+                                        <span class="text-sm text-gray-500">10 Jan 2025</span>
+                                    </div>
+                                    <div class="flex items-start justify-between pb-3 border-b">
+                                        <div>
+                                            <h4 class="font-medium">PVC Card Order</h4>
+                                            <p class="text-sm text-gray-500">Your Aadhaar PVC card has been dispatched</p>
+                                        </div>
+                                        <span class="text-sm text-gray-500">5 Jan 2025</span>
+                                    </div>
+                                    <div class="flex items-start justify-between">
+                                        <div>
+                                            <h4 class="font-medium">Mobile Number Update</h4>
+                                            <p class="text-sm text-gray-500">Your mobile number was updated successfully</p>
+                                        </div>
+                                        <span class="text-sm text-gray-500">1 Jan 2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="services" class="tab-content hidden">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="card hover:shadow-md transition-shadow">
+                                <div class="card-header">
+                                    <h3 class="text-lg font-semibold">Update Aadhaar</h3>
+                                    <p class="text-sm text-gray-500">Update your demographic details</p>
+                                </div>
+                                <div class="card-content">
+                                    <p class="text-sm mb-4">Update your name, address, mobile number, email, and other details.</p>
+                                    <button class="btn-primary w-full">Update Now</button>
+                                </div>
+                            </div>
+                            
+                            <div class="card hover:shadow-md transition-shadow">
+                                <div class="card-header">
+                                    <h3 class="text-lg font-semibold">Order Aadhaar PVC</h3>
+                                    <p class="text-sm text-gray-500">Get a durable PVC Aadhaar card</p>
+                                </div>
+                                <div class="card-content">
+                                    <p class="text-sm mb-4">Order a secure, wallet-sized PVC Aadhaar card delivered to your address.</p>
+                                    <button class="btn-primary w-full">Order Card</button>
+                                </div>
+                            </div>
+                            
+                            <div class="card hover:shadow-md transition-shadow">
+                                <div class="card-header">
+                                    <h3 class="text-lg font-semibold">Download Aadhaar</h3>
+                                    <p class="text-sm text-gray-500">Get your e-Aadhaar</p>
+                                </div>
+                                <div class="card-content">
+                                    <p class="text-sm mb-4">Download your Aadhaar in PDF format for immediate use.</p>
+                                    <button class="btn-primary w-full">Download</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="documents" class="tab-content hidden">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="text-lg font-semibold">Your Documents</h3>
+                                <p class="text-sm text-gray-500">Access and manage your Aadhaar documents</p>
+                            </div>
+                            <div class="card-content">
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50">
+                                        <div class="flex items-center gap-3">
+                                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                            </svg>
+                                            <div>
+                                                <h4 class="font-medium">e-Aadhaar</h4>
+                                                <p class="text-sm text-gray-500">Last downloaded: 15 Jan 2025</p>
+                                            </div>
+                                        </div>
+                                        <button class="btn-outline">Download</button>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50">
+                                        <div class="flex items-center gap-3">
+                                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                            </svg>
+                                            <div>
+                                                <h4 class="font-medium">Masked Aadhaar</h4>
+                                                <p class="text-sm text-gray-500">Last downloaded: 10 Jan 2025</p>
+                                            </div>
+                                        </div>
+                                        <button class="btn-outline">Download</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
